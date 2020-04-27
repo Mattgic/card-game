@@ -1,1 +1,1 @@
-export {default as Card} from './player-hand';
+export {default as PlayerHand} from './player-hand';

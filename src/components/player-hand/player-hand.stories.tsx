@@ -2,6 +2,7 @@ import * as React from 'react';
 import {withKnobs} from '@storybook/addon-knobs';
 import {CardType} from '../../types';
 import PlayerHand from './player-hand';
+import {getSortedCards} from '../../model/cards';
 
 export default {
   title: 'Player hand',
@@ -20,3 +21,7 @@ const playerHand: CardType[] = [
   {value: '4', suit: 'Diamonds'},
 ];
 export const hand1 = () => <PlayerHand cards={playerHand} />;
+
+export const sortedHand = () => (
+  <PlayerHand cards={getSortedCards(playerHand)} />
+);
