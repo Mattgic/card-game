@@ -11,6 +11,8 @@ export default {
 
 export const aceOfHearts = () => <Card card={{value: 'Ace', suit: 'Hearts'}} />;
 
+export const twoOfSpades = () => <Card card={{value: '2', suit: 'Spades'}} />;
+
 export const queenOfClubs = () => (
   <Card card={{value: 'Queen', suit: 'Clubs'}} />
 );
@@ -22,15 +24,15 @@ const ALL_CARDVALUES: CardValue[] = [
   'King',
   'Queen',
   'Jack',
-  'Ten',
-  'Nine',
-  'Eight',
-  'Seven',
-  'Six',
-  'Five',
-  'Four',
-  'Three',
-  'Two',
+  '10',
+  '9',
+  '8',
+  '7',
+  '6',
+  '5',
+  '4',
+  '3',
+  '2',
 ];
 export const playground = () => (
   <Card

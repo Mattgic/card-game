@@ -4,15 +4,15 @@ export type CardValue =
   | 'King'
   | 'Queen'
   | 'Jack'
-  | 'Ten'
-  | 'Nine'
-  | 'Eight'
-  | 'Seven'
-  | 'Six'
-  | 'Five'
-  | 'Four'
-  | 'Three'
-  | 'Two';
+  | '10'
+  | '9'
+  | '8'
+  | '7'
+  | '6'
+  | '5'
+  | '4'
+  | '3'
+  | '2';
 
 export enum CardSuitEnum {
   Spades = 'Spades',
@@ -40,3 +40,5 @@ export type CardType = {
   value: CardValue;
   suit: CardSuit;
 };
+
+export type PlayerHand = CardType[];
