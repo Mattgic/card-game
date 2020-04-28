@@ -11,14 +11,20 @@ export default {
 };
 
 const playerHand: CardType[] = [
-  {value: 'Ace', suit: 'Hearts'},
-  {value: '3', suit: 'Diamonds'},
-  {value: 'Queen', suit: 'Hearts'},
-  {value: '9', suit: 'Spades'},
-  {value: '7', suit: 'Clubs'},
-  {value: '8', suit: 'Spades'},
   {value: '5', suit: 'Spades'},
-  {value: '4', suit: 'Diamonds'},
+  {value: 'Ace', suit: 'Spades'},
+  {value: '5', suit: 'Diamonds'},
+  {value: '2', suit: 'Spades'},
+  {value: '3', suit: 'Spades'},
+  {value: 'King', suit: 'Clubs'},
+  {value: '3', suit: 'Clubs'},
+  {value: '10', suit: 'Spades'},
+  {value: '3', suit: 'Hearts'},
+  {value: '2', suit: 'Diamonds'},
+  {value: '8', suit: 'Clubs'},
+  {value: '7', suit: 'Clubs'},
+  {value: '8', suit: 'Hearts'},
+  {value: 'Queen', suit: 'Hearts'},
 ];
 export const hand1 = () => <PlayerHand cards={playerHand} />;
 

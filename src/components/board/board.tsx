@@ -1,23 +1,37 @@
+/** @jsx jsx */
+import {jsx} from '@emotion/core';
+
 import * as React from 'react';
 import {PlayerHand} from '../player-hand';
 import {getSortedCards} from '../../model/cards';
 import {CardType} from '../../types';
 
+import styled from '@emotion/styled';
+
+const Button = styled.button`
+  border-radius: 15px;
+  background: darkred;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin: 10px;
+`;
+
 const cards: CardType[] = [
   {value: '5', suit: 'Spades'},
-  {value: 'Ace', suit: 'Spades'},
-  {value: '5', suit: 'Diamonds'},
+  {value: 'Queen', suit: 'Spades'},
+  {value: '9', suit: 'Spades'},
   {value: '2', suit: 'Spades'},
   {value: '3', suit: 'Spades'},
-  {value: 'King', suit: 'Clubs'},
-  {value: '3', suit: 'Clubs'},
+  {value: 'Jack', suit: 'Spades'},
+  {value: '6', suit: 'Spades'},
+  {value: '8', suit: 'Spades'},
+  {value: 'Ace', suit: 'Spades'},
+  {value: '7', suit: 'Spades'},
+  {value: 'King', suit: 'Spades'},
+  {value: '4', suit: 'Spades'},
   {value: '10', suit: 'Spades'},
-  {value: '3', suit: 'Hearts'},
-  {value: '2', suit: 'Diamonds'},
-  {value: '8', suit: 'Clubs'},
-  {value: '7', suit: 'Clubs'},
-  {value: '8', suit: 'Hearts'},
-  {value: 'Queen', suit: 'Hearts'},
 ];
 
 const styles = {
@@ -36,17 +50,41 @@ const styles = {
   },
   footer: {
     position: 'absolute' as 'absolute',
+    display: 'flex',
+    justifyContent: 'space-between',
     bottom: 0,
     width: '100%',
-    margin: '0 auto',
+    height: '200px',
+  },
+  buttons: {
+    display: 'flex',
+    flexDirection: 'column' as 'column',
+    height: '100%',
+    width: '20%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    height: '30px',
+    borderRadius: '15px',
+    background: 'darkred',
   },
 };
 const Board: React.FC = () => {
+  const [playerHand, setPlayerHand] = React.useState(cards);
   return (
     <div style={styles.board}>
       <div style={styles.boardInside}>
         <div style={styles.footer}>
-          <PlayerHand cards={getSortedCards(cards)} />
+          <div css={{paddingLeft: '100px'}}>
+            <PlayerHand cards={playerHand} />
+          </div>
+          <div style={styles.buttons}>
+            <Button onClick={() => setPlayerHand(getSortedCards(playerHand))}>
+              AutoSort
+            </Button>
+            <Button>Play</Button>
+          </div>
         </div>
       </div>
     </div>
